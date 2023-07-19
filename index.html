@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Spotify Recommender</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.3"
+      integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Spotify Recommender</h1>
+    </header>
+
+    <!-- 
+      Before anything, create a form to login to Spotify.
+      First, get IDs of top 2 artists and top 3 songs from user for seeding
+      Next, provide form for time frame, acousticness, danceability, etc.
+      Finally, provide the information to Spotify API and render it.
+     -->
+    <form>
+      <!-- Markup example 1: input is inside label -->
+      <label for="username">
+        Username
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+        />
+      </label>
+
+      <!-- Markup example 2: input is after label -->
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+      <!-- Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
