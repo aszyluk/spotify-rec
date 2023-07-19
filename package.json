@@ -1,0 +1,17 @@
+{
+  "name": "spotify-rec",
+  "version": "1.0.0",
+  "description": "A website built with HTMX and PicoCSS that gets a user's Spotify recommendations using the API and form inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Adam Szyluk",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

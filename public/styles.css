@@ -1,0 +1,11 @@
+html {
+  color: #010402;
+  background-color: #e5faee;
+  --primary: #24c6b9;
+  --secondary: #f7d4e8;
+  --accent: #d72836;
+}
+
+header h1 {
+  text-align: center;
+}

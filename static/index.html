@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
     />
+    <link rel="stylesheet" href="../public/styles.css" />
     <script
       src="https://unpkg.com/htmx.org@1.9.3"
       integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua"
@@ -27,30 +28,31 @@
       Next, provide form for time frame, acousticness, danceability, etc.
       Finally, provide the information to Spotify API and render it.
      -->
-    <form>
-      <!-- Markup example 1: input is inside label -->
-      <label for="username">
-        Username
+    <div class="container">
+      <form hx-post="/login">
+        <label for="username">
+          Username
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </label>
+
+        <!-- Markup example 2: input is after label -->
+        <label for="password">Password</label>
         <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Username"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
           required
         />
-      </label>
-
-      <!-- Markup example 2: input is after label -->
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Password"
-        required
-      />
-      <!-- Button -->
-      <button type="submit">Submit</button>
-    </form>
+        <!-- Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
