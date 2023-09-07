@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,12 +16,13 @@
       integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <h1>Spotify Recommender</h1>
-    </header>
-
     <!-- 
       Before anything, create a form to login to Spotify.
       First, get IDs of top 2 artists and top 3 songs from user for seeding
@@ -29,28 +30,87 @@
       Finally, provide the information to Spotify API and render it.
      -->
     <div class="container">
-      <form hx-post="/login">
-        <label for="username">
-          Username
+      <header>
+        <h1 class="head-text">What Should I Listen To?</h1>
+      </header>
+      <form hx-post="/search">
+        <details role="list">
+          <summary aria-haspopup="listbox">Select Search Type...</summary>
+          <ul role="listbox">
+            <li>
+              <label for="album">
+                <input type="radio" id="album" name="type" value="album" />
+                Album
+              </label>
+            </li>
+            <li>
+              <label for="artist">
+                <input type="radio" id="artist" name="type" value="artist" />
+                Artist
+              </label>
+            </li>
+            <li>
+              <label for="track">
+                <input type="radio" id="track" name="type" value="track" />
+                Song
+              </label>
+            </li>
+          </ul>
+        </details>
+        <label for="search">
           <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search..."
             required
           />
         </label>
+      </form>
 
-        <!-- Markup example 2: input is after label -->
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <!-- Button -->
+      <div class="container">
+        <div class="grid">
+          <article>Test</article>
+          <article>Test2</article>
+          <article>Test3</article>
+        </div>
+      </div>
+
+      <form hx-post="/recommend">
+        <label for="acousticness"
+          >Acousticness
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            id="acousticness"
+            name="acousticness"
+          />
+        </label>
+        <label for="danceability"
+          >Danceability
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            id="danceability"
+            name="danceability"
+          />
+        </label>
+        <label for="energy"
+          >Energy
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            id="energy"
+            name="energy"
+          />
+        </label>
+
         <button type="submit">Submit</button>
       </form>
     </div>

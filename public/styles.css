@@ -9,3 +9,7 @@ html {
 header h1 {
   text-align: center;
 }
+
+.head-text {
+  padding-top: 1vh;
+}
